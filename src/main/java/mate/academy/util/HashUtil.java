@@ -13,7 +13,7 @@ public class HashUtil {
     public HashUtil() {
     }
 
-    public static String getSalt() {
+    public static String generateSalt() {
         byte[] salt = new byte[SALT_LENGTH];
         new SecureRandom().nextBytes(salt);
         return Base64.getEncoder().encodeToString(salt);

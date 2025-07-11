@@ -9,7 +9,7 @@ import jakarta.persistence.Table;
 import jakarta.persistence.UniqueConstraint;
 
 @Entity
-@Table(name = "users", uniqueConstraints = {@UniqueConstraint(columnNames = {"e-mail"}) })
+@Table(name = "users", uniqueConstraints = {@UniqueConstraint(columnNames = {"email"}) })
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -32,7 +32,6 @@ public class User {
         this.password = password;
         this.salt = salt;
     }
-
 
     public Long getId() {
         return id;
