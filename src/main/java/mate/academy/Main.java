@@ -81,18 +81,10 @@ public class Main {
             System.out.println("User already exists with email!: " + email);
         }
 
-        //2. Вхід з правильним паролем
+        //2. Вхід з правильним логіном і паролем
         try {
             User registeredUser = authenticationService.login(email, password);
-            System.out.println("Registered: " + registeredUser.getEmail());
-        } catch (AuthenticationException e) {
-            System.out.println("Registration failed!: " + e.getMessage());
-        }
-
-        //3. Вхід з неправильним паролем
-        try {
-            User loggedUser = authenticationService.login(email, "wrongPassword");
-            System.out.println("Logged in: " + loggedUser.getEmail());
+            System.out.println("Logged in: " + registeredUser.getEmail());
         } catch (AuthenticationException e) {
             System.out.println("Login failed!: " + e.getMessage());
         }

@@ -49,6 +49,8 @@ public class AuthenticationServiceImpl implements AuthenticationService {
         // 2. Створюємо нового користувача
         User user = new User();
         user.setEmail(email);
+        /* Hashing and salt generation are handled inside UserService.add(),
+        following SRP and keeping password processing logic encapsulated.*/
         user.setPassword(password); // Зберігаємо сирий пароль — UserService сам його захешує
 
         try {

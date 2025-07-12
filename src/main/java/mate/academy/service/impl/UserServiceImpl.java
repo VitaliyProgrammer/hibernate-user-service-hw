@@ -15,12 +15,12 @@ public class UserServiceImpl implements UserService {
     private UserDao userDao;
 
     @Override
-    public User add(User service) {
+    public User add(User user) {
         String salt = HashUtil.generateSalt();
-        String hashedPassword = HashUtil.hashPassword(service.getPassword(), salt);
-        service.setSalt(salt);
-        service.setPassword(hashedPassword);
-        return userDao.add(service);
+        String hashedPassword = HashUtil.hashPassword(user.getPassword(), salt);
+        user.setSalt(salt);
+        user.setPassword(hashedPassword);
+        return userDao.add(user);
     }
 
     @Override
